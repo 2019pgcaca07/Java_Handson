@@ -1,0 +1,21 @@
+package com.org.gen.day11HandsOn;
+
+import java.sql.*;
+
+
+
+public class GetConnection {
+	public static Connection getConnection() {
+		Connection con = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("Connecting....");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Acc","root","Sahu9876@");
+			System.out.println("Connecting to Bank DataBase...");
+		}catch(Exception e) {
+			System.out.println("This is the Exception"+e.getMessage());
+		}
+		return con;
+	}
+
+}
